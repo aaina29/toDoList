@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>TO DO LIST</h2>
+        <div class="search">
+            <input type="text" id="searchfilter" placeholder="search items....." autocomplete="off">
+            <select id="taksselected" onchange="GetSelectedTextValue(this)">
+                <option>Selection</option>
+                <option value="0">All tasks</option>
+                <option value="1">Completed task</option>
+                <option value="2">Uncompleted task</option>
+            </select>
+        </div>
+        
+        <div class="form">
+            <form id="forminput" method="POST">
+                <div class="input">
+                    <input type="text" id="field" name="field" placeholder="add item" autocomplete="off">
+                    <button type="submit" id="btnadd">ADD</button>
+                    <button type="button" id="btndelete">DELETE ALL</button>
+                </div>
+            </form>
+            <div class="list">
+                <ul id="list-item-container">
+                </ul>
+            </div>
+        </div>
+       
+    </div>
+
+    <!---MODAL-->
+    <div class="main display-none">
+        <div class="container-form">
+            <div class="query">
+                <p>Are you Sure you want to Delete?</p>
+                <input type="hidden" value="" id="item-to-be-deleted">
+                <div class="querybtns">
+                    <button type="button" id="delbtn" >DELETE</button>
+                    <button type="button" id="cancelbtn">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
